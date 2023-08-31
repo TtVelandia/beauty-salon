@@ -42,8 +42,8 @@ https://templatemo.com/tm-585-barber-shop
                 <nav id="sidebarMenu" class="col-md-4 col-lg-3 d-md-block sidebar collapse p-0">
 
                     <div class="position-sticky sidebar-sticky d-flex flex-column justify-content-center align-items-center">
-                        <a class="navbar-brand" href="index.html">
-                            <img src="assets/images/log2.png" class="logo-image img-fluid" align="">
+                        <a class="navbar-brand" href="#">
+                            <img src="assets/images/log3.png" class="logo-image img-fluid" align="">
                         </a>
 
                         <ul class="nav flex-column">
