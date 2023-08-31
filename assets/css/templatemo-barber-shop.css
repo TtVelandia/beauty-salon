@@ -12,15 +12,15 @@ https://templatemo.com/tm-585-barber-shop
 -----------------------------------------*/
 :root {
   --white-color:                  #ffffff;
-  --primary-color:                #d6a354;
-  --secondary-color:              #673AB7;
-  --section-bg-color:             #f0f8ff;
-  --custom-btn-bg-color:          #673AB7;
-  --custom-btn-bg-hover-color:    #FDBB2D;
-  --dark-color:                   #000000;
+  --primary-color:                #8d58a7;
+  --secondary-color:              #38466c;
+  --section-bg-color:             #f4e7fc;
+  --custom-btn-bg-color:          #38466c;
+  --custom-btn-bg-hover-color:    #BE90D5;
+  --dark-color:                   #ffffff;
   --p-color:                      #717275;
   --border-color:                 #7fffd4;
-  --link-hover-color:             #512DA8;
+  --link-hover-color:             #38466c;
 
   --body-font-family:             'Unbounded', cursive;
 
@@ -59,7 +59,7 @@ h3,
 h4,
 h5,
 h6 {
-  color: var(--dark-color);
+  color: var(--secondary-color);
 }
 
 h1,
@@ -170,7 +170,7 @@ strong {
 }
 
 .custom-block-bg-overlay-wrap:hover {
-  background: linear-gradient(90deg, #FDBB2D 0%, #22C1C3 100%);
+  background: linear-gradient(90deg, #BE90D5 0%, #54679B 100%);
   transform: scale(1.05);
 }
 
@@ -254,7 +254,7 @@ strong {
 }
 
 .logo-image {
-  width: 250px;
+  width: 500px;
   height: auto;
   margin-bottom: 70px;
 }
@@ -269,7 +269,7 @@ strong {
 
 #sidebarMenu .nav-link.active, 
 #sidebarMenu .nav-link:hover {
-  color: var(--white-color);
+  color: var(--secondary-color);
 }
 
 .navbar-toggler {
@@ -372,7 +372,7 @@ strong {
 
 .hero-section::after {
   content: "";
-  background: linear-gradient(90deg, #FDBB2D 0%, #22C1C3 100%);
+  background: linear-gradient(90deg, #8d58a769 0%, #00000033 100%);
   position: absolute;
   top: 0;
   right: 0;
@@ -677,7 +677,7 @@ strong {
 
 .site-footer::after {
   content: "";
-  background: linear-gradient(90deg, #FDBB2D 0%, #22C1C3 100%);
+  background: linear-gradient(90deg, #BE90D5 0%, #54679B 100%);
   position: absolute;
   right: 0;
   bottom: 0;

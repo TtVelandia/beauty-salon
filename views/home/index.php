@@ -43,7 +43,7 @@ https://templatemo.com/tm-585-barber-shop
 
                     <div class="position-sticky sidebar-sticky d-flex flex-column justify-content-center align-items-center">
                         <a class="navbar-brand" href="index.html">
-                            <img src="assets/images/barber/u3.png" class="logo-image img-fluid" align="">
+                            <img src="assets/images/log2.png" class="logo-image img-fluid" align="">
                         </a>
 
                         <ul class="nav flex-column">
@@ -92,7 +92,8 @@ https://templatemo.com/tm-585-barber-shop
 
                                 <h4><strong class="text-white">¡Apresurate! Hazte un buen corte de cabello.</strong></h4>
 
-                                <a href="#booking-section" class="smoothscroll btn custom-btn custom-btn-italic mt-3">Reserva</a>
+                                <!--a href="#booking-section" class="smoothscroll btn custom-btn custom-btn-italic mt-3">Reserva</a-->
+                                <a href="https://wa.me/3014187374" target="_blank" class="smoothscroll btn custom-btn custom-btn-italic mt-3">Reserva</a>
                             </div>
                     </section>
 
@@ -167,7 +168,7 @@ https://templatemo.com/tm-585-barber-shop
                             <div class="row">
 
                                 <div class="col-lg-12 col-12">
-                                    <h2 class="mb-5">Services</h2>
+                                    <h2 class="mb-5">Servicios</h2>
                                 </div>
 
                                 <?php foreach ($services as $index => $service) {?>
@@ -208,7 +209,7 @@ https://templatemo.com/tm-585-barber-shop
                                             </div>
 
                                             <div class="col-lg-6 col-12">
-                                                <input type="tel" class="form-control" name="bb-phone" placeholder="Celular" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required="">
+                                                <input type="tel" class="form-control" name="bb-phone" placeholder="Celular"  required="">
                                             </div>
                                         
                                             <div class="col-lg-6 col-12">
