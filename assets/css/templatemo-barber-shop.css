@@ -13,14 +13,14 @@ https://templatemo.com/tm-585-barber-shop
 :root {
   --white-color:                  #ffffff;
   --primary-color:                #d6a354;
-  --secondary-color:              #c12828;
+  --secondary-color:              #673AB7;
   --section-bg-color:             #f0f8ff;
-  --custom-btn-bg-color:          #c12828;
+  --custom-btn-bg-color:          #673AB7;
   --custom-btn-bg-hover-color:    #FDBB2D;
   --dark-color:                   #000000;
   --p-color:                      #717275;
   --border-color:                 #7fffd4;
-  --link-hover-color:             #B22727;
+  --link-hover-color:             #512DA8;
 
   --body-font-family:             'Unbounded', cursive;
 
@@ -351,7 +351,7 @@ strong {
   HERO        
 -----------------------------------------*/
 .hero-section {
-  background-image: url('../images/client-doing-hair-cut-barber-shop-salon.jpg');
+  background-image: url('../images/logos.jpeg');
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
