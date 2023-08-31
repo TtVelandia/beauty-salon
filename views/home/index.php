@@ -20,7 +20,7 @@
 
         <link href="assets/css/bootstrap-icons.css" rel="stylesheet">
 
-        <link href="assets/css/templatemo-barber-shop.css" rel="stylesheet">
+        <link href="assets/css/main.css" rel="stylesheet">
 <!--
 
 TemplateMo 585 Barber Shop
