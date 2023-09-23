@@ -2,7 +2,7 @@
 
 	//array con los controladores y sus respectivas acciones
 	$controllers= array(
-		'home'=>['index']
+		'home'=>['index', 'booking']
 	);
 
 	//verifica que el controlador enviado desde index.php esté dentro del arreglo controllers
@@ -27,6 +27,7 @@
 			case 'home':
 				require_once('models/service.php');
 				require_once('models/collaborator.php');
+				require_once('models/booking.php');
 				$controller= new HomeController();
 				break;
 		}

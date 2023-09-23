@@ -20,17 +20,26 @@
 
         <link href="assets/css/bootstrap-icons.css" rel="stylesheet">
 
-        <link href="assets/css/main.css" rel="stylesheet">
-<!--
+        <link href="assets/sweetalert/sweetalert2.min.css" rel="stylesheet">
 
-TemplateMo 585 Barber Shop
+        <link href="assets/css/main.css" rel="stylesheet"> 
 
-https://templatemo.com/tm-585-barber-shop
+        <script src="assets/sweetalert/sweetalert2.min.js"></script>
 
--->
+        <!-- JAVASCRIPT-->  
+        <script type="text/javascript">
+            function showSuccessAlert() {
+                Swal.fire(
+                    'Muy bien!',
+                    'Tu reserva esta lista!',
+                    'success'
+                );
+            }
+        </script> 
     </head>
     
     <body>
+        <?php if(isset($showSuccess) && $showSuccess){ ?> <script type="text/javascript">showSuccessAlert();</script> <?php } ?>
 
         <div class="container-fluid">
             <div class="row">
@@ -43,7 +52,7 @@ https://templatemo.com/tm-585-barber-shop
 
                     <div class="position-sticky sidebar-sticky d-flex flex-column justify-content-center align-items-center">
                         <a class="navbar-brand" href="#">
-                            <img src="assets/images/log3.png" class="logo-image img-fluid" align="">
+                            <img src="assets/images/log3.png" class="logo-image img-fluid">
                         </a>
 
                         <ul class="nav flex-column">
@@ -92,8 +101,8 @@ https://templatemo.com/tm-585-barber-shop
 
                                 <h4><strong class="text-white">¡Apresurate! Hazte un buen corte de cabello.</strong></h4>
 
-                                <!--a href="#booking-section" class="smoothscroll btn custom-btn custom-btn-italic mt-3">Reserva</a-->
-                                <a href="https://wa.me/3014187374" target="_blank" class="smoothscroll btn custom-btn custom-btn-italic mt-3">Reserva</a>
+                                <a href="#booking-section" class="smoothscroll btn custom-btn custom-btn-italic mt-3">Reserva</a>
+                                <!--a href="https://wa.me/3014187374" target="_blank" class="smoothscroll btn custom-btn custom-btn-italic mt-3">Reserva</a-->
                             </div>
                     </section>
 
@@ -190,60 +199,61 @@ https://templatemo.com/tm-585-barber-shop
                     </section>
 
                     <section class="booking-section section-padding" id="booking-section">
-                    <div class="container">
-                        <div class="row">
+                        <div class="container">
+                            <div class="row">
 
-                            <div class="col-lg-10 col-12 mx-auto">
-                                <form action="#" method="post" class="custom-form booking-form" id="bb-booking-form" role="form">
-                                    <div class="text-center mb-5">
-                                        <h2 class="mb-1">Reserva una silla</h2>
+                                <div class="col-lg-10 col-12 mx-auto">
+                                    <form action="?controller=home&action=booking" method="POST" class="custom-form booking-form" id="bb-booking-form" role="form">
+                                        <div class="text-center mb-5">
+                                            <h2 class="mb-1">Reserva una silla</h2>
 
-                                        <p>Rellene el formulario y nos pondremos en contacto con usted.</p>
-                                    </div>
-
-                                    <div class="booking-form-body">
-                                        <div class="row">
-
-                                            <div class="col-lg-6 col-12">
-                                                <input type="text" name="bb-name" id="bb-name" class="form-control" placeholder="Nombre" required>
-                                            </div>
-
-                                            <div class="col-lg-6 col-12">
-                                                <input type="tel" class="form-control" name="bb-phone" placeholder="Celular"  required="">
-                                            </div>
-                                        
-                                            <div class="col-lg-6 col-12">
-                                                <input class="form-control" type="time" name="bb-time" value="18:30" />
-                                            </div>
-
-                                            <div class="col-lg-6 col-12">
-                                                <select class="form-select form-control" name="bb-branch" id="bb-branch" aria-label="Default select example">
-                                                    <option selected="">Que te hacemos?</option>
-                                                    <?php foreach ($services as $index => $service) {?>
-                                                        <option value="<?php echo $service->id; ?>"><?php echo $service->name; ?></option>
-                                                    <?php } ?>
-                                                </select>
-
-                                            </div>
-                                            <div class="col-lg-6 col-12">
-                                                <input type="date" name="bb-date" id="bb-date" class="form-control" placeholder="Fecha" required>
-                                            </div>
-
-                                            <div class="col-lg-6 col-12">
-                                                <input type="number" name="bb-number" id="bb-number" class="form-control" placeholder="Numero de personas" required>
-                                            </div>
+                                            <p>Rellene el formulario y nos pondremos en contacto con usted.</p>
                                         </div>
 
-                                        <textarea name="bb-message" rows="3" class="form-control" id="bb-message" placeholder="Comentario (opcional)"></textarea>
+                                        <div class="booking-form-body">
+                                            <div class="row">
 
-                                        <div class="col-lg-4 col-md-10 col-8 mx-auto">
-                                            <button type="submit" class="form-control">Reservar</button>
+                                                <div class="col-lg-6 col-12">
+                                                    <input type="text" name="name" id="name" class="form-control" placeholder="Nombre" required>
+                                                </div>
+
+                                                <div class="col-lg-6 col-12">
+                                                    <input type="tel" class="form-control" name="celphone" placeholder="Celular"  required="">
+                                                </div>
+                                            
+                                                <div class="col-lg-6 col-12">
+                                                    <input class="form-control" type="time" id="hour" name="hour" min="09:00:00" max="21:00:00" />
+                                                </div>
+
+                                                <div class="col-lg-6 col-12">
+                                                    <select class="form-select form-control" name="service" id="service" aria-label="Default select example">
+                                                        <option selected="">Que servicio deseas?</option>
+                                                        <?php foreach ($services as $index => $service) {?>
+                                                            <option value="<?php echo $service->id; ?>"><?php echo $service->name; ?></option>
+                                                        <?php } ?>
+                                                    </select>
+
+                                                </div>
+                                                <div class="col-lg-6 col-12">
+                                                    <input type="date" name="date" id="date" class="form-control" placeholder="Fecha" required>
+                                                </div>
+
+                                                <div class="col-lg-6 col-12">
+                                                    <input type="number" min="1" name="quantity" id="quantity" class="form-control" placeholder="Numero de personas" required>
+                                                </div>
+                                            </div>
+
+                                            <textarea name="comment" rows="3" class="form-control" id="comment" placeholder="Comentario (opcional)"></textarea>
+
+                                            <div class="col-lg-4 col-md-10 col-8 mx-auto">
+                                                <button type="submit" class="form-control">Reservar</button>
+                                            </div>
                                         </div>
-                                    </div>
-                                </form>
-                        </div>
-                    </div>
-                </section>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>    
+                    </section>
 
 
                     <section class="price-list-section section-padding" id="section_4">
@@ -280,119 +290,127 @@ https://templatemo.com/tm-585-barber-shop
                     </section>
 
 
-                <section class="contact-section" id="section_5">
-                    <div class="section-padding section-bg">
-                        <div class="container">
-                            <div class="row">   
+                    <section class="contact-section" id="section_5">
+                        <div class="section-padding section-bg">
+                            <div class="container">
+                                <div class="row">   
 
-                                <div class="col-lg-8 col-12 mx-auto">
-                                    <h2 class="text-center">Saludanos</h2>
+                                    <div class="col-lg-8 col-12 mx-auto">
+                                        <h2 class="text-center">Saludanos</h2>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
 
-                    <div class="section-padding">
+                        <div class="section-padding">
+                            <div class="container">
+                                <div class="row">
+
+                                    <div class="col-lg-6 col-12">
+                                        <h5 class="mb-3"><strong>Información </strong> de Contacto </h5>
+
+                                        <p class="text-white d-flex mb-1">
+                                            <a href="tel: 120-240-3600" class="site-footer-link">
+                                                301-418-7374
+                                            </a>
+                                        </p>
+
+                                        <p class="text-white d-flex">
+                                            <a href="mailto:info@yourgmail.com" class="site-footer-link">
+                                                estiloslanegra@gmail.com
+                                            </a>
+                                        </p>
+
+                                        <ul class="social-icon">
+                                            <li class="social-icon-item">
+                                                <a href="#" class="social-icon-link bi-facebook">
+                                                </a>
+                                            </li>
+                
+                                            <li class="social-icon-item">
+                                                <a href="#" class="social-icon-link bi-instagram">
+                                                </a>
+                                            </li>
+
+                                            <li class="social-icon-item">
+                                                <a href="#" class="social-icon-link bi-whatsapp">
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+
+                                    <div class="col-lg-5 col-12 contact-block-wrap mt-5 mt-lg-0 pt-4 pt-lg-0 mx-auto">
+                                        <div class="contact-block">
+                                            <h6 class="mb-0">
+                                                <i class="custom-icon bi-shop me-3"></i>
+
+                                                <strong>Abierto todos los días</strong>
+
+                                                <span class="ms-auto">10:00 AM - 8:00 PM</span>
+                                            </h6>
+                                        </div>
+                                    </div>
+
+                                    <!--div class="col-lg-12 col-12 mx-auto mt-5 pt-5">
+                                        <iframe class="google-map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7702.122299518348!2d13.396786616231472!3d52.531268574169616!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47a85180d9075183%3A0xbba8c62c3dc41a7d!2sBarbabella%20Barbershop!5e1!3m2!1sen!2sth!4v1673886261201!5m2!1sen!2sth" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                                    </!--div-->
+
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <footer class="site-footer">
                         <div class="container">
                             <div class="row">
 
-                                <div class="col-lg-6 col-12">
-                                    <h5 class="mb-3"><strong>Información </strong> de Contacto </h5>
-
-                                    <p class="text-white d-flex mb-1">
-                                        <a href="tel: 120-240-3600" class="site-footer-link">
-                                            301-418-7374
-                                        </a>
-                                    </p>
-
-                                    <p class="text-white d-flex">
-                                        <a href="mailto:info@yourgmail.com" class="site-footer-link">
-                                            estiloslanegra@gmail.com
-                                        </a>
-                                    </p>
-
-                                    <ul class="social-icon">
-                                        <li class="social-icon-item">
-                                            <a href="#" class="social-icon-link bi-facebook">
-                                            </a>
-                                        </li>
-            
-                                        <li class="social-icon-item">
-                                            <a href="#" class="social-icon-link bi-instagram">
-                                            </a>
-                                        </li>
-
-                                        <li class="social-icon-item">
-                                            <a href="#" class="social-icon-link bi-whatsapp">
-                                            </a>
-                                        </li>
-                                    </ul>
+                                <div class="col-lg-12 col-12">
+                                    <h4 class="site-footer-title mb-4">Nuestra sede</h4>
                                 </div>
 
-                                <div class="col-lg-5 col-12 contact-block-wrap mt-5 mt-lg-0 pt-4 pt-lg-0 mx-auto">
-                                    <div class="contact-block">
-                                        <h6 class="mb-0">
-                                            <i class="custom-icon bi-shop me-3"></i>
-
-                                            <strong>Abierto todos los días</strong>
-
-                                            <span class="ms-auto">10:00 AM - 8:00 PM</span>
-                                        </h6>
+                                <div class="col-lg-4 col-md-6 col-11">
+                                    <div class="site-footer-thumb">
+                                        <strong class="mb-1">Cucuta</strong>
+                                        <p>Av 5 21-07, Ospina Perez, Cucuta, Colombia</p>
                                     </div>
                                 </div>
-
-                                <!--div class="col-lg-12 col-12 mx-auto mt-5 pt-5">
-                                    <iframe class="google-map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7702.122299518348!2d13.396786616231472!3d52.531268574169616!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47a85180d9075183%3A0xbba8c62c3dc41a7d!2sBarbabella%20Barbershop!5e1!3m2!1sen!2sth!4v1673886261201!5m2!1sen!2sth" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                                </!--div-->
-
                             </div>
                         </div>
-                    </div>
-                </section>
 
-                <footer class="site-footer">
-                    <div class="container">
-                        <div class="row">
+                        <div class="site-footer-bottom">
+                            <div class="container">
+                                <div class="row align-items-center">
 
-                            <div class="col-lg-12 col-12">
-                                <h4 class="site-footer-title mb-4">Nuestra sede</h4>
-                            </div>
+                                    <div class="col-lg-8 col-12 mt-4">
+                                        <p class="copyright-text mb-0">Copyright © 2023 Cortes y estilos La Negra 
+                                        - Diseño: <a href="https://templatemo.com" rel="nofollow" target="_blank">TemplateMo</a></p>
+                                    </div>
 
-                            <div class="col-lg-4 col-md-6 col-11">
-                                <div class="site-footer-thumb">
-                                    <strong class="mb-1">Cucuta</strong>
-                                    <p>Av 5 21-07, Ospina Perez, Cucuta, Colombia</p>
+                                    <div class="col-lg-2 col-md-3 col-3 mt-lg-4 ms-auto">
+                                        <a href="#section_1" class="back-top-icon smoothscroll" title="Back Top">
+                                            <i class="bi-arrow-up-circle"></i>
+                                        </a>
+                                    </div>
+
                                 </div>
                             </div>
                         </div>
-                    </div>
-
-                    <div class="site-footer-bottom">
-                        <div class="container">
-                            <div class="row align-items-center">
-
-                                <div class="col-lg-8 col-12 mt-4">
-                                    <p class="copyright-text mb-0">Copyright © 2023 Cortes y estilos La Negra 
-                                    - Diseño: <a href="https://templatemo.com" rel="nofollow" target="_blank">TemplateMo</a></p>
-                                </div>
-
-                                <div class="col-lg-2 col-md-3 col-3 mt-lg-4 ms-auto">
-                                    <a href="#section_1" class="back-top-icon smoothscroll" title="Back Top">
-                                        <i class="bi-arrow-up-circle"></i>
-                                    </a>
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
-                </footer>
+                    </footer>
+                </div>
             </div>
-
+        </div>
         <!-- JAVASCRIPT FILES -->
         <script src="assets/js/jquery.min.js"></script>
         <script src="assets/js/bootstrap.min.js"></script>
         <script src="assets/js/click-scroll.js"></script>
         <script src="assets/js/custom.js"></script>
 
+        <script type="text/javascript">
+            var currentDate = new Date();
+            var formattedDate = currentDate.toISOString().split("T")[0];
+            var formattedTime = currentDate.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+            document.getElementById("date").setAttribute("min", formattedDate);
+            document.getElementById('hour').value = formattedTime;
+        </script>
     </body>
 </html>

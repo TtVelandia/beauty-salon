@@ -41,6 +41,7 @@ trait ServiceDao {
 		//asignarlo al objeto Producto
         $value=$select->fetch();
         
+        $service = new Service();
         $service->id =  $value['servi_id'];
         $service->name =  $value['servi_name'];
         $service->price =  $value['servi_price'];
