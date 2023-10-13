@@ -32,7 +32,7 @@ class Booking {
         }
     }
 
-    public function propiedades() {
+    public function properties() {
         return get_object_vars($this);
     }   
 

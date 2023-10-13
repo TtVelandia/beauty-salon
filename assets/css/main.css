@@ -573,6 +573,22 @@ strong {
   padding: 65px;
 }
 
+/*---------------------------------------
+  LOGIN               
+-----------------------------------------*/
+.login-section {
+  background: linear-gradient(90deg, #BE90D5 0%, #54679B 100%);
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  min-height: 800px;
+}
+
+.login-form {
+  background: var(--white-color);
+  border-radius: var(--border-radius-medium);
+  padding: 65px;
+}
 
 /*---------------------------------------
   CONTACT               

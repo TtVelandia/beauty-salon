@@ -75,6 +75,10 @@
                             <li class="nav-item">
                                 <a class="nav-link click-scroll" href="#section_5">Contacto</a>
                             </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link click-scroll" href="?controller=login&action=index">Inicia sesión</a>
+                            </li>
                         </ul>
                     </div>
                 </nav>

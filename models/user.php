@@ -1,19 +1,17 @@
 <?php
 
-require_once "dao/service_dao.php";
+require_once "dao/user_dao.php";
 
-class Service {
+class User {
 
-    use ServiceDao;
-
+    use UserDao;
 
     private $id;
+    private $nickname;
+    private $password;
     private $name;
-    private $price;
-    private $image;
 
     function __construct(){
-        
     }
 
     public function __set($property, $value) {
@@ -30,9 +28,8 @@ class Service {
 
     public function properties() {
         return get_object_vars($this);
-    }   
+    }
 
     function __destruct() {
-        
     }
 }

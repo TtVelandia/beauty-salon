@@ -2,7 +2,8 @@
 
 	//array con los controladores y sus respectivas acciones
 	$controllers= array(
-		'home'=>['index', 'booking']
+		'home'=>['index', 'booking'],
+		'login'=>['index', 'signIn', 'signOut']
 	);
 
 	//verifica que el controlador enviado desde index.php esté dentro del arreglo controllers
@@ -30,6 +31,10 @@
 				require_once('models/booking.php');
 				$controller= new HomeController();
 				break;
+			case 'login':		
+				require_once('models/user.php');		
+				$controller= new LoginController();
+				break;		
 		}
 		//llama a la acción del controlador
 		$controller->{$action}();
