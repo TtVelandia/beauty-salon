@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <meta name="description" content="">
-    <meta name="author" content="Łukasz Holeczek">
+    <meta name="author" content="">
     <meta name="keyword" content="">
     <title>Beauty Salon</title>
     <link rel="apple-touch-icon" sizes="57x57" href="assets/admin/favicon/apple-icon-57x57.png">
@@ -23,7 +23,6 @@
     <link rel="icon" type="image/png" sizes="16x16" href="assets/admin/favicon/favicon-16x16.png">
     <link rel="manifest" href="assets/admin/favicon/manifest.json">
     <meta name="msapplication-TileColor" content="#ffffff">
-    <meta name="msapplication-TileImage" content="assets/admin/favicon/ms-icon-144x144.png">
     <meta name="theme-color" content="#ffffff">
     <!-- Vendors styles-->
     <link rel="stylesheet" href="assets/admin/vendors/simplebar/css/simplebar.css">
@@ -37,12 +36,7 @@
   <body>
     <div class="sidebar sidebar-dark sidebar-fixed" id="sidebar">
       <div class="sidebar-brand d-none d-md-flex">
-        <svg class="sidebar-brand-full" width="118" height="46" alt="CoreUI Logo">
-          <use xlink:href="assets/admin/brand/coreui.svg#full"></use>
-        </svg>
-        <svg class="sidebar-brand-narrow" width="46" height="46" alt="CoreUI Logo">
-          <use xlink:href="assets/admin/brand/coreui.svg#signet"></use>
-        </svg>
+        <h2>Beauty Salon</h2>
       </div>
       <ul class="sidebar-nav" data-coreui="navigation" data-simplebar="">
         <li class="nav-item"><a class="nav-link" href="index.html">
@@ -181,9 +175,7 @@
               <use xlink:href="assets/admin/vendors/@coreui/icons/svg/free.svg#cil-menu"></use>
             </svg>
           </button><a class="header-brand d-md-none" href="#">
-            <svg width="118" height="46" alt="CoreUI Logo">
-              <use xlink:href="assets/admin/brand/coreui.svg#full"></use>
-            </svg></a>
+          <h2>Beauty Salon</h2></a>
           <ul class="header-nav d-none d-md-flex">
             <li class="nav-item"><a class="nav-link" href="#">Dashboard</a></li>
             <li class="nav-item"><a class="nav-link" href="#">Users</a></li>
