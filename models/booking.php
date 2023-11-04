@@ -1,6 +1,7 @@
 <?php
 
 require_once "dao/booking_dao.php";
+require_once "service.php";
 
 class Booking {
 

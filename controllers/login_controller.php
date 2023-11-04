@@ -18,9 +18,7 @@
 			if ($user !== null) {
 				$this->sessionStart($user);
 
-				/*$listaCategoria = Categoria::listarCategorias();
-				$listaProducto=Producto::listaProductosInicio();
-				$listaCarrusel = Carrusel::listaCarrusel();*/
+				$bookings = Booking::getAll();
 				require_once('views/admin/index.php');
 			} else {
 				require_once('views/login/index.php');
@@ -29,7 +27,7 @@
 
 		public function signOut(){
 			$this->sessionDestroy();
-			$this->index();
+			require_once('views/login/index.php');
 		}
 		
 		public function error(){

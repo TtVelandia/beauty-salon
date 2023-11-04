@@ -32,7 +32,8 @@
 				$controller= new HomeController();
 				break;
 			case 'login':		
-				require_once('models/user.php');		
+				require_once('models/user.php');
+				require_once('models/booking.php');		
 				$controller= new LoginController();
 				break;		
 		}
