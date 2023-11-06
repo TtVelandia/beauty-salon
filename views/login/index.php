@@ -52,8 +52,16 @@
                                                 </div>
                                             </div>
 
-                                            <div class="col-lg-4 col-md-10 col-8 mx-auto">
-                                                <button type="submit" class="form-control">Acceder!</button>
+                                            <div class="row">
+                                                <div class="col-lg-6 col-12 mx-auto">
+                                                    <button type="submit" class="form-control me-2 mb-2">Acceder!</button>
+                                                </div>
+                                            </div>  
+                                            
+                                            <div class="row">
+                                                <div class="col-lg-6 col-12 mx-auto">
+                                                    <a class="form-control btn custom-btn custom-border-btn" href="?controller=home&action=index">Ir al nicio</a>
+                                                </div>
                                             </div>
                                         </div>
                                     </form>

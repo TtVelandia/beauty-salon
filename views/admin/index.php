@@ -69,7 +69,7 @@
                 <a class="dropdown-item" href="?controller=login&action=signOut">
                   <svg class="icon me-2">
                     <use xlink:href="assets/admin/vendors/@coreui/icons/svg/free.svg#cil-account-logout"></use>
-                  </svg> Logout</a>
+                  </svg>Cerrar sesión</a>
               </div>
             </li>
           </ul>
@@ -129,7 +129,11 @@
                                     <use xlink:href="assets/admin/vendors/@coreui/icons/svg/free.svg#cil-options"></use>
                                   </svg>
                                 </button>
-                                <div class="dropdown-menu dropdown-menu-end"><a class="dropdown-item" href="#">Info</a><a class="dropdown-item" href="#">Edit</a><a class="dropdown-item text-danger" href="#">Delete</a></div>
+                                <div class="dropdown-menu dropdown-menu-end">
+                                  <a class="dropdown-item" href="#">Info</a>
+                                  <a class="dropdown-item" href="#">Edit</a>
+                                  <a class="dropdown-item text-danger" href="#">Delete</a>
+                                </div>
                               </div>
                             </td>
                           </tr>
