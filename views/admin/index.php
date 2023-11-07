@@ -32,8 +32,36 @@
     <!-- We use those styles to show code examples, you should remove them in your application.-->
     <link href="assets/admin/css/examples.css" rel="stylesheet">
     <link href="assets/admin/vendors/@coreui/chartjs/css/coreui-chartjs.css" rel="stylesheet">
+
+    <link href="assets/sweetalert/sweetalert2.min.css" rel="stylesheet">
+    <script src="assets/sweetalert/sweetalert2.min.js"></script>
+
+    <!-- JAVASCRIPT-->  
+    <script type="text/javascript">
+      function showSuccessAlert() {
+        Swal.fire(
+            'Muy bien!',
+            'Reserva ejecutada!',
+            'success'
+        );
+      }
+
+      function showErrorAlert() {
+        Swal.fire(
+            'Ups!',
+            'Algo salió mal!',
+            'error'
+        );
+      }
+    </script> 
   </head>
   <body>
+    <?php if(isset($showSuccessSubmit) && $showSuccessSubmit){ ?> 
+      <script type="text/javascript">showSuccessAlert();</script> 
+    <?php } ?>
+    <?php if(isset($showSuccessSubmit) && !$showSuccessSubmit){ ?> 
+      <script type="text/javascript">showErrorAlert();</script> 
+    <?php } ?>
     <div class="sidebar sidebar-dark sidebar-fixed" id="sidebar">
       <div class="sidebar-brand d-none d-md-flex">
         <h2>Beauty Salon</h2>
@@ -130,9 +158,7 @@
                                   </svg>
                                 </button>
                                 <div class="dropdown-menu dropdown-menu-end">
-                                  <a class="dropdown-item" href="#">Info</a>
-                                  <a class="dropdown-item" href="#">Edit</a>
-                                  <a class="dropdown-item text-danger" href="#">Delete</a>
+                                  <a class="dropdown-item text-success" href="?controller=admin&action=bookingSubmit&id=<?php echo $booking->id; ?>">Realizado</a>
                                 </div>
                               </div>
                             </td>

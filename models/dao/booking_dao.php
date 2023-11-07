@@ -43,6 +43,7 @@ trait BookingDao {
 			SELECT b.book_id, b.book_name, b.book_celphone, b.book_date, b.book_hour, b.book_quantity, b.book_comment, s.servi_id, s.servi_name
 			FROM booking as b
 			INNER JOIN service as s ON s.servi_id = b.servi_id
+            WHERE b.book_state = 'PENDING'
         ";
 
         $sql=$db->query($SQL);
@@ -67,6 +68,35 @@ trait BookingDao {
         }
         return $list;
     }
+
+    public static function updateStateById($id, $state){	
+
+		$db=Db::getConnect();
+        $isSuccess = true;
+
+		try {
+			
+			$db->beginTransaction();	
+
+			$SQL = "
+                UPDATE booking
+                SET book_state =:state
+                WHERE book_id =:id				   
+			";
+			
+			$select = $db->prepare($SQL);
+			$select->bindValue('id', $id);
+			$select->bindValue('state', $state);
+			$select->execute();
+
+			$db->commit();
+		} catch (Exception $e) {
+			$db->rollback();
+            $isSuccess = false;
+		}
+        
+        return $isSuccess;
+	}
 }
 
 ?>

@@ -31,10 +31,11 @@ CREATE TABLE `booking` (
   `book_quantity` int(11) DEFAULT NULL,
   `book_comment` varchar(200) DEFAULT NULL,
   `servi_id` int(11) NOT NULL,
+  `book_state` varchar(45) NOT NULL DEFAULT 'PENDING',
   PRIMARY KEY (`book_id`),
   KEY `fk_booking_service_idx` (`servi_id`),
   CONSTRAINT `fk_booking_service` FOREIGN KEY (`servi_id`) REFERENCES `service` (`servi_id`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -43,6 +44,7 @@ CREATE TABLE `booking` (
 
 LOCK TABLES `booking` WRITE;
 /*!40000 ALTER TABLE `booking` DISABLE KEYS */;
+INSERT INTO `booking` VALUES (1,'Renzon Caceres ','3175542950','2023-11-04','16:06:00',1,'Corte Aleman con hojilla.',1,'PENDING'),(2,'Sofia Velandia','3014187374','2023-11-09','14:00:00',1,'Quiero mascarilla de miel con avena.',10,'PENDING'),(3,'Tatiana Velandia','3014187374','2023-11-04','15:00:00',1,'Quiero planchado con mascarilla de macadamia.',4,'PENDING'),(4,'Santiago Velandia','3014187374','2023-11-04','12:08:00',1,'',2,'PENDING'),(5,'test 6-11','3014187374','2023-11-07','18:30:00',1,'',1,'PENDING'),(6,'test 6-11 2','3014187374','2023-11-07','19:10:00',1,'Semi permanente.',5,'PENDING'),(7,'test ','3014187374','2023-11-13','10:56:00',1,'',2,'PENDING'),(8,'Test 2','3175542950','2023-11-07','20:29:00',1,'',4,'SUBMIT');
 /*!40000 ALTER TABLE `booking` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -136,4 +138,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-10-13  9:29:33
+-- Dump completed on 2023-11-06 22:27:14

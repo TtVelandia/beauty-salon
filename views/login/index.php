@@ -60,7 +60,7 @@
                                             
                                             <div class="row">
                                                 <div class="col-lg-6 col-12 mx-auto">
-                                                    <a class="form-control btn custom-btn custom-border-btn" href="?controller=home&action=index">Ir al nicio</a>
+                                                    <a class="form-control btn custom-btn custom-border-btn" href="?controller=home&action=index">Ir al inicio</a>
                                                 </div>
                                             </div>
                                         </div>
