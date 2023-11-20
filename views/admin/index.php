@@ -39,19 +39,23 @@
     <!-- JAVASCRIPT-->  
     <script type="text/javascript">
       function showSuccessAlert() {
-        Swal.fire(
-            'Muy bien!',
-            'Reserva ejecutada!',
-            'success'
-        );
+        Swal.fire({
+            position: "top-end",
+            icon: "success",
+            title: "Reserva ejecutada!",
+            showConfirmButton: false,
+            timer: 1500
+        });
       }
 
       function showErrorAlert() {
-        Swal.fire(
-            'Ups!',
-            'Algo salió mal!',
-            'error'
-        );
+        Swal.fire({
+            position: "top-end",
+            icon: "error",
+            title: "Algo salió mal!",
+            showConfirmButton: false,
+            timer: 2000
+        });
       }
     </script> 
   </head>

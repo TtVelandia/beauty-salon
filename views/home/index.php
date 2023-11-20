@@ -29,11 +29,13 @@
         <!-- JAVASCRIPT-->  
         <script type="text/javascript">
             function showSuccessAlert() {
-                Swal.fire(
-                    'Muy bien!',
-                    'Tu reserva esta lista!',
-                    'success'
-                );
+                Swal.fire({
+                    position: "top-end",
+                    icon: "success",
+                    title: "Tu reserva esta lista!",
+                    showConfirmButton: false,
+                    timer: 1500
+                });
             }
         </script> 
     </head>
@@ -164,7 +166,7 @@
                             <div class="row">
 
                                 <div class="col-lg-10 col-12 mx-auto">
-                                    <h2 class="mb-3">Consigue un 32% de descuento</h2>
+                                    <h2 class="mb-3">Consigue un 15% de descuento</h2>
 
                                     <p>cada segunda semana del mes</p>
 
@@ -222,7 +224,7 @@
                                                 </div>
 
                                                 <div class="col-lg-6 col-12">
-                                                    <input type="tel" class="form-control" name="celphone" placeholder="Celular"  required="">
+                                                    <input type="tel" class="form-control" id="celphone" name="celphone" placeholder="Celular"  required="">
                                                 </div>
                                             
                                                 <div class="col-lg-6 col-12">
@@ -415,6 +417,88 @@
             var formattedTime = currentDate.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
             document.getElementById("date").setAttribute("min", formattedDate);
             document.getElementById('hour').value = formattedTime;
+        </script>
+
+        <script type="text/javascript">
+            const form = document.getElementById('bb-booking-form');
+            form.addEventListener('submit', function(event) {
+                event.preventDefault();
+                
+                const nameField = document.getElementById("name");
+                const nameValue = nameField.value;
+                const celphoneField = document.getElementById("celphone");
+                const celphoneValue = celphoneField.value;
+                const hourField = document.getElementById("hour");
+                const hourValue = hourField.value;
+                const serviceField = document.getElementById("service");
+                const serviceValue = serviceField.value;
+                const dateField = document.getElementById("date");
+                const dateValue = dateField.value;
+                const quantityField = document.getElementById("quantity");
+                const quantityValue = quantityField.value;
+
+                if (
+                    nameValue.trim() !== "" &&
+                    celphoneValue.trim() !== "" &&
+                    hourValue.trim() !== "" &&
+                    serviceValue.trim() !== "" &&
+                    dateValue.trim() !== "" &&
+                    quantityValue.trim() !== ""
+                ) {
+                    Swal.fire({
+                        title: "<strong>Política de Privacidad</strong>",
+                        icon: "info",
+                        html: `
+                            <p>Esta compañía se compromete a proteger la privacidad de los usuarios de este sitio web. Esta política de privacidad describe cómo se recopila, utiliza y protege la información personal que se recopila.</p>
+        
+                            <strong>Información recopilada</strong>
+                            <p>Recopilamos la siguiente información personal:</p>
+                            <ul>
+                                <li>Nombre y apellido</li>
+                                <li>Numero de telefono de contacto</li>
+                            </ul>
+                            
+                            <strong>Uso de la información</strong>
+                            <p>La información personal recopilada se utiliza para:</p>
+                            <ul>
+                                <li>Enviar información solicitada</li>
+                                <li>Mejorar la experiencia del usuario</li>
+                                <li>Enviar comunicaciones de marketing</li>
+                            </ul>
+                            
+                            <strong>Divulgación de la información</strong>
+                            <p>No vendemos, cedemos ni distribuimos la información personal recopilada sin su consentimiento, salvo que sea requerido por un juez con un orden judicial.</p>
+                            
+                            <strong>Seguridad</strong>
+                            <p>Implementamos medidas de seguridad para proteger la información personal recopilada contra accesos no autorizados o divulgación.</p>
+                            
+                            <strong>Cambios a la política de privacidad</strong>
+                            <p>Esta política de privacidad puede ser modificada en cualquier momento sin previo aviso. La versión más reciente estará disponible en esta página.</p>
+                            
+                            <strong>Contacto</strong>
+                            <p>Si tiene alguna pregunta sobre esta política de privacidad, puede ponerse en contacto con nosotros a través de la siguiente dirección de correo electrónico: estiloslanegra@gmail.com.</p>
+                            
+                            <p>Última actualización: 19/11/2023</p>
+                        `,
+
+                        showCloseButton: true,
+                        showCancelButton: true,
+                        focusConfirm: false,
+                        confirmButtonText: `
+                            Si, acepto!
+                        `,
+                        cancelButtonText: `
+                            Cancelar
+                        `
+                    }).then((result) => {
+                        if (result.isConfirmed) {
+                            this.submit();
+                        } else {
+                            return;
+                        }
+                    });
+                } 
+            });
         </script>
     </body>
 </html>
